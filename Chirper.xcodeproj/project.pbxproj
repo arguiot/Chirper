@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		68796ABA20DFE0230012642D /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68796AB920DFE0230012642D /* Alamofire.framework */; };
+		68796ABB20DFE0230012642D /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 68796AB920DFE0230012642D /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		68C4ECEC20DF283C004B5C5B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C4ECEB20DF283C004B5C5B /* AppDelegate.swift */; };
 		68C4ECEE20DF283C004B5C5B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C4ECED20DF283C004B5C5B /* ViewController.swift */; };
 		68C4ECF020DF283E004B5C5B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68C4ECEF20DF283E004B5C5B /* Assets.xcassets */; };
@@ -20,6 +22,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				68796ABB20DFE0230012642D /* Alamofire.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -27,6 +30,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		68796AB920DFE0230012642D /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/Mac/Alamofire.framework; sourceTree = "<group>"; };
 		68C4ECE820DF283C004B5C5B /* Chirper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chirper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		68C4ECEB20DF283C004B5C5B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		68C4ECED20DF283C004B5C5B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -41,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68796ABA20DFE0230012642D /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,6 +55,7 @@
 		68C4ECDF20DF283C004B5C5B = {
 			isa = PBXGroup;
 			children = (
+				68796AB920DFE0230012642D /* Alamofire.framework */,
 				68C4ECEA20DF283C004B5C5B /* Chirper */,
 				68C4ECE920DF283C004B5C5B /* Products */,
 			);
@@ -288,6 +294,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 73CCF549YB;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = Chirper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -308,6 +318,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 73CCF549YB;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = Chirper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
