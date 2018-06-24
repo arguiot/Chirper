@@ -19,7 +19,7 @@
                                         <menuItem title="Compose" keyEquivalent="t" allowsKeyEquivalentWhenHidden="YES" id="hXA-XM-gV2">
                                             <modifierMask key="keyEquivalentModifierMask" control="YES" option="YES"/>
                                             <connections>
-                                                <action selector="OpenWindow:" target="Voe-Tx-rLC" id="mce-Uc-sCB"/>
+                                                <action selector="Open:" target="Voe-Tx-rLC" id="IKb-Ny-kZa"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="No7-1w-Wez"/>
@@ -54,7 +54,7 @@
                     <window key="window" identifier="ChirperWindow" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" titlebarAppearsTransparent="YES" titleVisibility="hidden" id="RRr-xM-Sjz">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="245" y="310" width="400" height="200"/>
+                        <rect key="contentRect" x="657" y="415" width="400" height="150"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1050"/>
                         <toolbar key="toolbar" implicitIdentifier="94C687F0-C532-4016-9BCE-D23A857C9870" autosavesConfiguration="NO" allowsUserCustomization="NO" displayMode="iconOnly" sizeMode="regular" id="uQq-kF-RVj">
                             <allowedToolbarItems>
@@ -98,20 +98,51 @@ DQ
             <objects>
                 <viewController id="ikO-F1-Np8" customClass="ViewController" customModule="Chirper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="GaC-ul-K2I">
-                        <rect key="frame" x="0.0" y="0.0" width="400" height="200"/>
+                        <rect key="frame" x="0.0" y="0.0" width="400" height="150"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zvs-b4-iZp">
-                                <rect key="frame" x="182" y="91" width="36" height="17"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" title="Nice!" id="HMZ-Rd-kQK">
-                                    <font key="font" usesAppearanceFont="YES"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
+                            <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="77e-yU-X2i">
+                                <rect key="frame" x="0.0" y="0.0" width="400" height="150"/>
+                                <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="Blw-8F-bZq">
+                                    <rect key="frame" x="0.0" y="0.0" width="400" height="150"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textView importsGraphics="NO" richText="NO" verticallyResizable="YES" continuousSpellChecking="YES" spellingCorrection="YES" grammarChecking="YES" smartInsertDelete="YES" id="Rro-ZJ-sFz">
+                                            <rect key="frame" x="0.0" y="0.0" width="400" height="150"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <size key="minSize" width="400" height="150"/>
+                                            <size key="maxSize" width="400" height="10000000"/>
+                                            <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                        </textView>
+                                    </subviews>
+                                </clipView>
+                                <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="ABs-xP-53o">
+                                    <rect key="frame" x="385" y="0.0" width="15" height="200"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
+                            <progressIndicator wantsLayer="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="280" bezeled="NO" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="0xH-9n-99U">
+                                <rect key="frame" x="364" y="20" width="16" height="16"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="16" id="TL3-NB-CCC"/>
+                                    <constraint firstAttribute="width" constant="16" id="hYI-zX-ZKQ"/>
+                                </constraints>
+                            </progressIndicator>
                         </subviews>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="77e-yU-X2i" secondAttribute="bottom" id="F2o-Nd-OQB"/>
+                            <constraint firstAttribute="trailing" secondItem="0xH-9n-99U" secondAttribute="trailing" constant="20" id="bdf-MU-3UR"/>
+                            <constraint firstItem="77e-yU-X2i" firstAttribute="top" secondItem="GaC-ul-K2I" secondAttribute="top" id="giN-Eq-JVJ"/>
+                            <constraint firstAttribute="trailing" secondItem="77e-yU-X2i" secondAttribute="trailing" id="pB7-4v-FOZ"/>
+                            <constraint firstItem="77e-yU-X2i" firstAttribute="leading" secondItem="GaC-ul-K2I" secondAttribute="leading" id="qbi-zT-l9c"/>
+                            <constraint firstAttribute="bottom" secondItem="0xH-9n-99U" secondAttribute="bottom" constant="20" id="vYe-Sx-2dC"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="input" destination="Rro-ZJ-sFz" id="FGY-zt-uTG"/>
+                        <outlet property="progress" destination="0xH-9n-99U" id="xyf-BK-7rI"/>
+                    </connections>
                 </viewController>
                 <customObject id="Mby-fR-BCH" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>

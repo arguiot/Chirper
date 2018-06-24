@@ -23,8 +23,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
         statusItem.menu = self.menu
         
+        
     }
-    @IBAction func OpenWindow(_ sender: Any) {
+    @IBAction func Open(_ sender: Any) {
         let window = NSStoryboard(name: "Main", bundle: nil).instantiateController(withIdentifier: "ChirperWindow") as! NSWindowController
         WC = window
         WC?.showWindow(self)

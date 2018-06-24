@@ -13,6 +13,19 @@
 		68C4ECF320DF283E004B5C5B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68C4ECF120DF283E004B5C5B /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		68E0027520DF653400461B7C /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		68C4ECE820DF283C004B5C5B /* Chirper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chirper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		68C4ECEB20DF283C004B5C5B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -73,6 +86,7 @@
 				68C4ECE420DF283C004B5C5B /* Sources */,
 				68C4ECE520DF283C004B5C5B /* Frameworks */,
 				68C4ECE620DF283C004B5C5B /* Resources */,
+				68E0027520DF653400461B7C /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -268,6 +282,7 @@
 		68C4ECF920DF283E004B5C5B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Chirper/Chirper.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -287,6 +302,7 @@
 		68C4ECFA20DF283E004B5C5B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Chirper/Chirper.entitlements;
 				CODE_SIGN_STYLE = Automatic;
