@@ -62,12 +62,17 @@
                                 <toolbarItem implicitItemIdentifier="54559DB8-0878-4E1B-B2F6-F904899EF9BD" label="Tweet" paletteLabel="Tweet" sizingBehavior="auto" id="pgH-0U-vE9">
                                     <nil key="toolTip"/>
                                     <button key="view" verticalHuggingPriority="750" id="eji-cW-dOb">
-                                        <rect key="frame" x="0.0" y="14" width="89" height="43"/>
+                                        <rect key="frame" x="0.0" y="14" width="72" height="43"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <buttonCell key="cell" type="push" title="Tweet" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="UPj-am-4u2">
+                                        <buttonCell key="cell" type="push" title="Tweet" bezelStyle="rounded" alignment="center" borderStyle="border" sound="Pop" inset="2" id="UPj-am-4u2">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
+                                            <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
+                                            <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                                         </buttonCell>
+                                        <color key="contentTintColor" name="alternateSelectedControlColor" catalog="System" colorSpace="catalog"/>
                                     </button>
                                 </toolbarItem>
                             </allowedToolbarItems>
@@ -113,4 +118,7 @@
             <point key="canvasLocation" x="46" y="733"/>
         </scene>
     </scenes>
+    <resources>
+        <sound name="Pop"/>
+    </resources>
 </document>
