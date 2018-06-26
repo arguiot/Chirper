@@ -22,8 +22,6 @@ class ViewController: NSViewController, NSTextViewDelegate {
 
         // Do any additional setup after loading the view.
         input.delegate = self as NSTextViewDelegate
-        
-
     }
     func textDidChange(_ notification: Notification) {
         if input.string.count > tweet {

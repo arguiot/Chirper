@@ -22,8 +22,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             button.image = NSImage(named:NSImage.Name("Chirper"))
         }
         statusItem.menu = self.menu
-        
-        
     }
     @IBAction func Open(_ sender: Any) {
         let window = NSStoryboard(name: "Main", bundle: nil).instantiateController(withIdentifier: "ChirperWindow") as! NSWindowController
@@ -31,6 +29,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         WC?.showWindow(self)
         self.WC?.window?.titleVisibility = .hidden
         self.WC?.window?.backgroundColor = #colorLiteral(red: 0.2128759027, green: 0.2128818035, blue: 0.2128786147, alpha: 1)
+        WC?.window?.makeKey()
     }
     
     func applicationWillTerminate(_ aNotification: Notification) {
