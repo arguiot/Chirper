@@ -35,15 +35,5 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
     }
-    
-    func handleGetURLEvent(event: NSAppleEventDescriptor?, replyEvent: NSAppleEventDescriptor?) {
-        if let aeEventDescriptor = event?.paramDescriptor(forKeyword: AEKeyword(keyDirectObject)) {
-            if let urlStr = aeEventDescriptor.stringValue {
-                let url = URL(string: urlStr)
-                print(url)
-                // do something with the URL
-            }
-        }
-    }
 }
 
