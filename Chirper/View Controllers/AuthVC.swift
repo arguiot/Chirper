@@ -34,11 +34,18 @@ class AuthVC: NSViewController, WKUIDelegate, WKNavigationDelegate {
         if keyPath == #keyPath(WKWebView.estimatedProgress) {
             // When page load finishes. Should work on each page reload.
             if (self.WebView.estimatedProgress == 1) {
-                print("### URL:", self.WebView.url)
+                observeURL(self.WebView.url!)
             }
         }
     }
-    @IBAction func cancel(_ sender: Any) {
-        
+    func observeURL(_ url: URL) {
+        print(url.host!)
+        if url.host! == "twitter.com" {
+            cancel(nil)
+        }
+    }
+    
+    @IBAction func cancel(_ sender: Any?) {
+        self.dismiss(self)
     }
 }
