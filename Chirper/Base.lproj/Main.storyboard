@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14269.12"/>
+        <plugIn identifier="com.apple.WebKit2IBPlugin" version="14269.12"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -166,12 +167,25 @@ DQ
                         </connections>
                     </window>
                     <connections>
-                        <segue destination="wVu-eZ-fWk" kind="relationship" relationship="window.shadowedContentViewController" id="VQP-ca-Srj"/>
+                        <segue destination="wVu-eZ-fWk" kind="relationship" relationship="window.shadowedContentViewController" id="MtY-UY-hYJ"/>
                     </connections>
                 </windowController>
                 <customObject id="eFO-7M-O79" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="708" y="331"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="YTz-nZ-fDG">
+            <objects>
+                <viewController id="odZ-7K-LoC" sceneMemberID="viewController">
+                    <view key="view" id="hIp-aL-3NN">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </view>
+                </viewController>
+                <customObject id="9mi-0d-Ybv" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1461" y="314"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="6Ol-aa-8vx">
@@ -212,6 +226,9 @@ DQ
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <color key="contentTintColor" name="alternateSelectedControlColor" catalog="System" colorSpace="catalog"/>
+                                <connections>
+                                    <segue destination="9Lq-wu-rRI" kind="sheet" id="IiH-LR-s4A"/>
+                                </connections>
                             </button>
                         </subviews>
                         <constraints>
@@ -228,6 +245,49 @@ DQ
                 <customObject id="QPr-eN-lle" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="759" y="990"/>
+        </scene>
+        <!--AuthVC-->
+        <scene sceneID="aLF-3m-o8c">
+            <objects>
+                <viewController id="9Lq-wu-rRI" customClass="AuthVC" customModule="Chirper" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="0A2-ci-ecS">
+                        <rect key="frame" x="0.0" y="0.0" width="800" height="500"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <wkWebView wantsLayer="YES" allowsLinkPreview="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cEm-wD-oRO">
+                                <rect key="frame" x="0.0" y="50" width="800" height="450"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences" javaScriptCanOpenWindowsAutomatically="NO"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="s1T-Ti-7xG">
+                                <rect key="frame" x="724" y="11" width="56" height="25"/>
+                                <buttonCell key="cell" type="roundTextured" title="Cancel" bezelStyle="texturedRounded" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="XHu-OU-qUg">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="cancel:" target="9Lq-wu-rRI" id="2rk-LT-hzD"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="cEm-wD-oRO" firstAttribute="leading" secondItem="0A2-ci-ecS" secondAttribute="leading" id="DSm-bC-q9K"/>
+                            <constraint firstItem="s1T-Ti-7xG" firstAttribute="top" secondItem="cEm-wD-oRO" secondAttribute="bottom" constant="15" id="Fbh-3T-zmm"/>
+                            <constraint firstAttribute="trailing" secondItem="cEm-wD-oRO" secondAttribute="trailing" id="OJN-T0-H1c"/>
+                            <constraint firstItem="cEm-wD-oRO" firstAttribute="top" secondItem="0A2-ci-ecS" secondAttribute="top" id="c3c-GZ-k9f"/>
+                            <constraint firstAttribute="bottom" secondItem="s1T-Ti-7xG" secondAttribute="bottom" constant="13" id="lPE-us-7uT"/>
+                            <constraint firstAttribute="trailing" secondItem="s1T-Ti-7xG" secondAttribute="trailing" constant="20" id="zH2-PC-pHD"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="WebView" destination="cEm-wD-oRO" id="RCL-eL-NOm"/>
+                    </connections>
+                </viewController>
+                <customObject id="OKM-Mh-DJK" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1643" y="990"/>
         </scene>
     </scenes>
     <resources>
