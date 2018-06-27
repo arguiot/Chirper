@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		685861D520E2626E00BA691E /* AuthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685861D320E2626E00BA691E /* AuthVC.swift */; };
+		685861D820E262DE00BA691E /* Cred.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685861D720E262DE00BA691E /* Cred.swift */; };
 		68796ABA20DFE0230012642D /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68796AB920DFE0230012642D /* Alamofire.framework */; };
 		68796ABB20DFE0230012642D /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 68796AB920DFE0230012642D /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6892FC3620E07D6D00C8BDA7 /* access_token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6892FC3520E07D6D00C8BDA7 /* access_token.swift */; };
@@ -31,6 +33,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		685861D320E2626E00BA691E /* AuthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthVC.swift; sourceTree = "<group>"; };
+		685861D720E262DE00BA691E /* Cred.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cred.swift; sourceTree = "<group>"; };
 		68796AB920DFE0230012642D /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/Mac/Alamofire.framework; sourceTree = "<group>"; };
 		6892FC3520E07D6D00C8BDA7 /* access_token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = access_token.swift; sourceTree = "<group>"; };
 		68C4ECE820DF283C004B5C5B /* Chirper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chirper.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -54,10 +58,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		685861D220E2624300BA691E /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				68C4ECED20DF283C004B5C5B /* ViewController.swift */,
+				685861D320E2626E00BA691E /* AuthVC.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
 		6892FC3320E07D3000C8BDA7 /* Buffer API */ = {
 			isa = PBXGroup;
 			children = (
 				6892FC3420E07D4500C8BDA7 /* Access */,
+				685861D720E262DE00BA691E /* Cred.swift */,
 			);
 			path = "Buffer API";
 			sourceTree = "<group>";
@@ -92,7 +106,7 @@
 			children = (
 				6892FC3320E07D3000C8BDA7 /* Buffer API */,
 				68C4ECEB20DF283C004B5C5B /* AppDelegate.swift */,
-				68C4ECED20DF283C004B5C5B /* ViewController.swift */,
+				685861D220E2624300BA691E /* View Controllers */,
 				68C4ECEF20DF283E004B5C5B /* Assets.xcassets */,
 				68C4ECF120DF283E004B5C5B /* Main.storyboard */,
 				68C4ECF420DF283E004B5C5B /* Info.plist */,
@@ -134,6 +148,11 @@
 				TargetAttributes = {
 					68C4ECE720DF283C004B5C5B = {
 						CreatedOnToolsVersion = 10.0;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -174,7 +193,9 @@
 			files = (
 				68C4ECEE20DF283C004B5C5B /* ViewController.swift in Sources */,
 				6892FC3620E07D6D00C8BDA7 /* access_token.swift in Sources */,
+				685861D520E2626E00BA691E /* AuthVC.swift in Sources */,
 				68C4ECEC20DF283C004B5C5B /* AppDelegate.swift in Sources */,
+				685861D820E262DE00BA691E /* Cred.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -14,8 +14,6 @@ class ViewController: NSViewController, NSTextViewDelegate {
     @IBOutlet var input: NSTextView!
     @IBOutlet weak var progress: NSProgressIndicator!
     
-    let BUFFER_CLIENT_ID = "5b2f84ea4f87a6af7d185461"
-    let BUFFER_CLIENT_SECRET = "e801eefcf1ff49c27bea9e2587caa238"
     
     override func viewDidLoad() {
         super.viewDidLoad()
