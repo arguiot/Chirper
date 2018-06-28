@@ -1,0 +1,31 @@
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	height: 100vh;
+}
+.buffer {
+	width: 100px;
+	height: 105px;
+	background: url("../img/buffer.svg");
+	background-size: cover;
+	margin: 30px;
+}
+.load {
+	width: 50px;
+	height: 50px;
+	border-radius: 100%;
+	border: 5px solid #eee;
+	border-top: 5px solid #000;
+	animation: spin 500ms infinite;
+}
+
+@keyframes spin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
