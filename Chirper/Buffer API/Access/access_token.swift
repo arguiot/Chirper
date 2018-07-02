@@ -8,18 +8,35 @@
 
 import Cocoa
 import Alamofire
+import WebKit
 
 class AccessToken {
-    var client: String;
-    var secret: String;
-    init(_ client: String, secret: String) {
-        self.client = client
-        self.secret = secret
+    let creds = BufferCred()
+    
+    var wkview: WKWebView;
+    var token: String?
+    init(_ webview: WKWebView) {
+        wkview = webview
     }
-    func redirect(link: URL?) -> Bool {
-        if let url = link, NSWorkspace.shared.open(url) {
-            return true
+    func getCode() {
+        wkview.evaluateJavaScript("api.getCode()") { (result, error) in
+            self.token = result as? String
+            self.request(result as! String) // Doing the request
         }
-        return false
+    }
+    
+    func request(_ token: String) {
+        let params: Parameters = [
+            "client_id": creds.BUFFER_CLIENT_ID,
+            "client_secret": creds.BUFFER_CLIENT_SECRET,
+            "redirect_uri": "https://arguiot.github.io/Chirper/api/",
+            "code": token,
+            "grant_type": "authorization_code"
+        ]
+        print(params)
+        Alamofire.request("https://api.bufferapp.com/1/oauth2/token.json", method: .post, parameters: params, encoding: URLEncoding.default).responseJSON { (response) in
+            print(response.request)
+            print(response.result.value)
+        }
     }
 }
