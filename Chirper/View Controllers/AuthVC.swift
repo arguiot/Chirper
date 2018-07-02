@@ -40,7 +40,9 @@ class AuthVC: NSViewController, WKUIDelegate, WKNavigationDelegate {
     }
     func observeURL(_ url: URL) {
         print(url.host!)
-        if url.host! == "twitter.com" {
+        if url.host! == "arguiot.github.io" {
+            let access_token = AccessToken(WebView)
+            access_token.getCode()
             cancel(nil)
         }
     }
