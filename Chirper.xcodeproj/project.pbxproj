@@ -12,6 +12,7 @@
 		68796ABA20DFE0230012642D /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68796AB920DFE0230012642D /* Alamofire.framework */; };
 		68796ABB20DFE0230012642D /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 68796AB920DFE0230012642D /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6892FC3620E07D6D00C8BDA7 /* access_token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6892FC3520E07D6D00C8BDA7 /* access_token.swift */; };
+		68C3FF9720EC08A4002D367A /* Welcome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C3FF9520EC08A4002D367A /* Welcome.swift */; };
 		68C4ECEC20DF283C004B5C5B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C4ECEB20DF283C004B5C5B /* AppDelegate.swift */; };
 		68C4ECEE20DF283C004B5C5B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C4ECED20DF283C004B5C5B /* ViewController.swift */; };
 		68C4ECF020DF283E004B5C5B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68C4ECEF20DF283E004B5C5B /* Assets.xcassets */; };
@@ -37,6 +38,7 @@
 		685861D720E262DE00BA691E /* Cred.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cred.swift; sourceTree = "<group>"; };
 		68796AB920DFE0230012642D /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/Mac/Alamofire.framework; sourceTree = "<group>"; };
 		6892FC3520E07D6D00C8BDA7 /* access_token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = access_token.swift; sourceTree = "<group>"; };
+		68C3FF9520EC08A4002D367A /* Welcome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Welcome.swift; sourceTree = "<group>"; };
 		68C4ECE820DF283C004B5C5B /* Chirper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chirper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		68C4ECEB20DF283C004B5C5B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		68C4ECED20DF283C004B5C5B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 			children = (
 				68C4ECED20DF283C004B5C5B /* ViewController.swift */,
 				685861D320E2626E00BA691E /* AuthVC.swift */,
+				68C3FF9520EC08A4002D367A /* Welcome.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -195,6 +198,7 @@
 				6892FC3620E07D6D00C8BDA7 /* access_token.swift in Sources */,
 				685861D520E2626E00BA691E /* AuthVC.swift in Sources */,
 				68C4ECEC20DF283C004B5C5B /* AppDelegate.swift in Sources */,
+				68C3FF9720EC08A4002D367A /* Welcome.swift in Sources */,
 				685861D820E262DE00BA691E /* Cred.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

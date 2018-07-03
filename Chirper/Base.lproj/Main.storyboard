@@ -174,10 +174,10 @@ DQ
             </objects>
             <point key="canvasLocation" x="708" y="331"/>
         </scene>
-        <!--View Controller-->
+        <!--Welcome-->
         <scene sceneID="6Ol-aa-8vx">
             <objects>
-                <viewController id="wVu-eZ-fWk" sceneMemberID="viewController">
+                <viewController id="wVu-eZ-fWk" customClass="Welcome" customModule="Chirper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="h0X-Nr-Bgu">
                         <rect key="frame" x="0.0" y="0.0" width="800" height="450"/>
                         <autoresizingMask key="autoresizingMask"/>
