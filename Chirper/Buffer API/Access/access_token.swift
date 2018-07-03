@@ -33,10 +33,13 @@ class AccessToken {
             "code": token,
             "grant_type": "authorization_code"
         ]
-        print(params)
         Alamofire.request("https://api.bufferapp.com/1/oauth2/token.json", method: .post, parameters: params, encoding: URLEncoding.default).responseJSON { (response) in
-            print(response.request)
-            print(response.result.value)
+            if let json = response.result.value {
+                let acToken = (json as AnyObject)["access_token"] as! String
+                UserDefaults.standard.set(acToken, forKey: "token")
+                
+                print(UserDefaults.standard.string(forKey: "token"))
+            }
         }
     }
 }

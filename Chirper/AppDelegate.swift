@@ -22,6 +22,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             button.image = NSImage(named:NSImage.Name("Chirper"))
         }
         statusItem.menu = self.menu
+        if UserDefaults.standard.string(forKey: "token") == nil {
+            let window = NSStoryboard(name: "Main", bundle: nil).instantiateController(withIdentifier: "InitWindow") as! NSWindowController
+            WC = window
+            WC?.showWindow(self)
+            WC?.window?.makeKey()
+        }
     }
     @IBAction func Open(_ sender: Any) {
         let window = NSStoryboard(name: "Main", bundle: nil).instantiateController(withIdentifier: "ChirperWindow") as! NSWindowController
