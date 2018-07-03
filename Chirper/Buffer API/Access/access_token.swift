@@ -39,6 +39,8 @@ class AccessToken {
                 UserDefaults.standard.set(acToken, forKey: "token")
                 
                 print(UserDefaults.standard.string(forKey: "token"))
+                let prof = Profiles(acToken)
+                prof.getTwitter()
             }
         }
     }

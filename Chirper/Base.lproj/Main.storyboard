@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14269.12" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14269.12" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="4bl-Ei-TtX">
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14269.12"/>
@@ -57,7 +57,7 @@
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="657" y="415" width="400" height="150"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1050"/>
-                        <toolbar key="toolbar" implicitIdentifier="94C687F0-C532-4016-9BCE-D23A857C9870" autosavesConfiguration="NO" allowsUserCustomization="NO" displayMode="iconOnly" sizeMode="regular" id="uQq-kF-RVj">
+                        <toolbar key="toolbar" implicitIdentifier="D9505A77-9A79-456D-9613-53920BEB3427" autosavesConfiguration="NO" allowsUserCustomization="NO" displayMode="iconOnly" sizeMode="small" id="uQq-kF-RVj">
                             <allowedToolbarItems>
                                 <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="qFJ-et-AMY"/>
                                 <toolbarItem implicitItemIdentifier="54559DB8-0878-4E1B-B2F6-F904899EF9BD" label="Tweet" paletteLabel="Tweet" sizingBehavior="auto" id="pgH-0U-vE9">
@@ -74,6 +74,9 @@ DQ
                                             <modifierMask key="keyEquivalentModifierMask" command="YES"/>
                                         </buttonCell>
                                         <color key="contentTintColor" name="alternateSelectedControlColor" catalog="System" colorSpace="catalog"/>
+                                        <connections>
+                                            <action selector="SendTweet:" target="2Ao-MY-eeu" id="dN2-9z-une"/>
+                                        </connections>
                                     </button>
                                 </toolbarItem>
                             </allowedToolbarItems>

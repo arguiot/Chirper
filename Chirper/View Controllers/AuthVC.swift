@@ -43,6 +43,7 @@ class AuthVC: NSViewController, WKUIDelegate, WKNavigationDelegate {
         if url.host! == "arguiot.github.io" {
             let access_token = AccessToken(WebView)
             access_token.getCode()
+            
             self.view.window?.sheetParent?.performClose(nil)
             
             // relauch
