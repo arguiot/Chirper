@@ -22,7 +22,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             button.image = NSImage(named:NSImage.Name("Chirper"))
         }
         
-        if UserDefaults.standard.string(forKey: "token") == nil ||  UserDefaults.standard.string(forKey: "profile") == nil {
+        if UserDefaults.standard.string(forKey: "token") == nil ||  UserDefaults.standard.array(forKey: "profile") == nil {
             let window = NSStoryboard(name: "Main", bundle: nil).instantiateController(withIdentifier: "InitWindow") as! NSWindowController
             WC = window
             WC?.showWindow(self)
@@ -42,6 +42,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
+    }
+    
+    func emptyDefaults() { // test only
+        UserDefaults.standard.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)
+        UserDefaults.standard.synchronize()
     }
 }
 
