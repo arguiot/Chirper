@@ -6,7 +6,7 @@
 //  Copyright © 2018 Arthur Guiot. All rights reserved.
 //
 
-import Foundation
+import AppKit
 import Alamofire
 
 class Profiles {
@@ -19,14 +19,18 @@ class Profiles {
         
         Alamofire.request(url).responseJSON { (response) in
             if let json = response.result.value {
-                var profile = "";
+                var profile = [String]();
                 
                 for i in (json as! Array<Any>) {
                     if (i as AnyObject)["service"] as! String == "twitter" {
-                        profile = (i as AnyObject)["id"] as! String
+                        profile.append((i as AnyObject)["id"] as! String)
                     }
                 }
-                UserDefaults.standard.set(profile, forKey: "profile")
+                if profile.isEmpty {
+                    self.dialogOKCancel(question: "No Twitter accounts connected with your Buffer profile", text: "Please make sure your account has at least one Twitter account linked.")
+                } else {
+                    UserDefaults.standard.set(profile, forKey: "profile")
+                }
                 
                 self.relaunch()
             }
@@ -42,5 +46,15 @@ class Profiles {
         task.launch()
         exit(0)
 
+    }
+    
+    func dialogOKCancel(question: String, text: String) -> Bool {
+        let alert = NSAlert()
+        alert.messageText = question
+        alert.informativeText = text
+        alert.alertStyle = .warning
+        alert.addButton(withTitle: "OK")
+        alert.addButton(withTitle: "Cancel")
+        return alert.runModal() == .alertFirstButtonReturn
     }
 }
