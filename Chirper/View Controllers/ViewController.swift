@@ -16,7 +16,7 @@ class ViewController: NSViewController, NSTextViewDelegate {
     @IBOutlet weak var load: NSProgressIndicator!
     
     let token = UserDefaults.standard.string(forKey: "token")
-    let profile = UserDefaults.standard.string(forKey: "profile")
+    let profile = UserDefaults.standard.array(forKey: "profile")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,7 +45,7 @@ class ViewController: NSViewController, NSTextViewDelegate {
             
             let params = [
                 "text": input.string,
-                "profile_ids": [profile!],
+                "profile_ids": profile!,
                 "now": true
                 ] as [String : Any]
             Alamofire.request("https://api.bufferapp.com/1/updates/create.json?access_token=\(token!)", method: .post, parameters: params, encoding: URLEncoding.default).responseJSON { (response) in
