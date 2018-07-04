@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14269.12" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="4bl-Ei-TtX">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14269.12" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14269.12"/>
@@ -133,9 +133,18 @@ DQ
                                     <constraint firstAttribute="width" constant="16" id="hYI-zX-ZKQ"/>
                                 </constraints>
                             </progressIndicator>
+                            <progressIndicator wantsLayer="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="45R-ds-Wib">
+                                <rect key="frame" x="184" y="59" width="32" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="32" id="Xfp-As-y4V"/>
+                                    <constraint firstAttribute="height" constant="32" id="oHw-vd-dj2"/>
+                                </constraints>
+                            </progressIndicator>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="45R-ds-Wib" firstAttribute="centerX" secondItem="GaC-ul-K2I" secondAttribute="centerX" id="6EP-sV-3Db"/>
                             <constraint firstAttribute="bottom" secondItem="77e-yU-X2i" secondAttribute="bottom" id="F2o-Nd-OQB"/>
+                            <constraint firstItem="45R-ds-Wib" firstAttribute="centerY" secondItem="GaC-ul-K2I" secondAttribute="centerY" id="SFE-03-5uE"/>
                             <constraint firstAttribute="trailing" secondItem="0xH-9n-99U" secondAttribute="trailing" constant="20" id="bdf-MU-3UR"/>
                             <constraint firstItem="77e-yU-X2i" firstAttribute="top" secondItem="GaC-ul-K2I" secondAttribute="top" id="giN-Eq-JVJ"/>
                             <constraint firstAttribute="trailing" secondItem="77e-yU-X2i" secondAttribute="trailing" id="pB7-4v-FOZ"/>
@@ -145,6 +154,7 @@ DQ
                     </view>
                     <connections>
                         <outlet property="input" destination="Rro-ZJ-sFz" id="FGY-zt-uTG"/>
+                        <outlet property="load" destination="45R-ds-Wib" id="IQh-Cq-V7z"/>
                         <outlet property="progress" destination="0xH-9n-99U" id="xyf-BK-7rI"/>
                     </connections>
                 </viewController>

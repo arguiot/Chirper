@@ -18,15 +18,16 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
-        if UserDefaults.standard.string(forKey: "token") == nil {
+        if let button = statusItem.button {
+            button.image = NSImage(named:NSImage.Name("Chirper"))
+        }
+        
+        if UserDefaults.standard.string(forKey: "token") == nil ||  UserDefaults.standard.string(forKey: "profile") == nil {
             let window = NSStoryboard(name: "Main", bundle: nil).instantiateController(withIdentifier: "InitWindow") as! NSWindowController
             WC = window
             WC?.showWindow(self)
             WC?.window?.makeKey()
         } else {
-            if let button = statusItem.button {
-                button.image = NSImage(named:NSImage.Name("Chirper"))
-            }
             statusItem.menu = self.menu
         }
     }

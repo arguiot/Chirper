@@ -38,7 +38,6 @@ class AccessToken {
                 let acToken = (json as AnyObject)["access_token"] as! String
                 UserDefaults.standard.set(acToken, forKey: "token")
                 
-                print(UserDefaults.standard.string(forKey: "token"))
                 let prof = Profiles(acToken)
                 prof.getTwitter()
             }

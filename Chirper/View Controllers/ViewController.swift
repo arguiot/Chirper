@@ -13,13 +13,19 @@ class ViewController: NSViewController, NSTextViewDelegate {
     
     @IBOutlet var input: NSTextView!
     @IBOutlet weak var progress: NSProgressIndicator!
+    @IBOutlet weak var load: NSProgressIndicator!
     
+    let token = UserDefaults.standard.string(forKey: "token")
+    let profile = UserDefaults.standard.string(forKey: "profile")
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        load.isHidden = true
         input.delegate = self as NSTextViewDelegate
+        
+        print("Using the profile: \(profile) with \(token)")
     }
     func textDidChange(_ notification: Notification) {
         if input.string.count > tweet {
@@ -30,12 +36,25 @@ class ViewController: NSViewController, NSTextViewDelegate {
 
     override var representedObject: Any? {
         didSet {
-        // Update the view, if already loaded.
+            // Update the view, if already loaded.
         }
     }
     @IBAction func SendTweet(_ sender: Any) {
-        if UserDefaults.standard.string(forKey: "token") != nil {
+        if token != nil || profile != nil {
+            load.isHidden = false
             
+            let params = [
+                "text": input.string,
+                "profile_ids": [profile!],
+                "now": true
+                ] as [String : Any]
+            Alamofire.request("https://api.bufferapp.com/1/updates/create.json?access_token=\(token!)", method: .post, parameters: params, encoding: URLEncoding.default).responseJSON { (response) in
+                print(response.result.value)
+                
+                self.view.window?.performClose(self)
+            }
+        } else {
+            fatalError("Can't find the token or the profile.")
         }
     }
 

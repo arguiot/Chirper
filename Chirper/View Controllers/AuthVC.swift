@@ -44,16 +44,6 @@ class AuthVC: NSViewController, WKUIDelegate, WKNavigationDelegate {
             let access_token = AccessToken(WebView)
             access_token.getCode()
             
-            self.view.window?.sheetParent?.performClose(nil)
-            
-            // relauch
-            let url = URL(fileURLWithPath: Bundle.main.resourcePath!)
-            let path = url.deletingLastPathComponent().deletingLastPathComponent().absoluteString
-            let task = Process()
-            task.launchPath = "/usr/bin/open"
-            task.arguments = [path]
-            task.launch()
-            exit(0)
         }
     }
     
