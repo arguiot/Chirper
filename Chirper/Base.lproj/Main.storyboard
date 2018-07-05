@@ -24,6 +24,12 @@
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="No7-1w-Wez"/>
+                                        <menuItem title="Sign Out" id="n7P-v5-9Ty" userLabel="Sign Out">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="signOut:" target="Ady-hI-5gd" id="kuN-lw-nOf"/>
+                                            </connections>
+                                        </menuItem>
                                         <menuItem title="Quit" keyEquivalent="q" id="0hJ-ea-QV6">
                                             <connections>
                                                 <action selector="terminate:" target="hnw-xV-0zn" id="heY-LO-ojG"/>
@@ -82,7 +88,7 @@ DQ
                                 <toolbarItem implicitItemIdentifier="A9E5308B-95CB-44F0-82FD-8E01F5C5E014" label="Buffer" paletteLabel="Buffer" sizingBehavior="auto" id="BVY-gQ-fod">
                                     <nil key="toolTip"/>
                                     <button key="view" verticalHuggingPriority="750" id="4f0-PB-05o">
-                                        <rect key="frame" x="0.0" y="14" width="75" height="41"/>
+                                        <rect key="frame" x="0.0" y="14" width="75" height="37"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <buttonCell key="cell" type="bevel" title="Buffer" bezelStyle="regularSquare" alignment="center" borderStyle="border" sound="Pop" inset="2" id="482-h2-RNz">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -131,7 +137,7 @@ DQ
                                     <rect key="frame" x="0.0" y="0.0" width="400" height="150"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <textView importsGraphics="NO" richText="NO" verticallyResizable="YES" continuousSpellChecking="YES" spellingCorrection="YES" grammarChecking="YES" smartInsertDelete="YES" id="Rro-ZJ-sFz">
+                                        <textView importsGraphics="NO" richText="NO" verticallyResizable="YES" fieldEditor="YES" continuousSpellChecking="YES" spellingCorrection="YES" grammarChecking="YES" smartInsertDelete="YES" id="Rro-ZJ-sFz">
                                             <rect key="frame" x="0.0" y="0.0" width="400" height="150"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -48,5 +48,20 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         UserDefaults.standard.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)
         UserDefaults.standard.synchronize()
     }
+    func relaunch() {
+        // relauch
+        let url = URL(fileURLWithPath: Bundle.main.resourcePath!)
+        let path = url.deletingLastPathComponent().deletingLastPathComponent().absoluteString
+        let task = Process()
+        task.launchPath = "/usr/bin/open"
+        task.arguments = [path]
+        task.launch()
+        exit(0)
+        
+    }
+    @IBAction func signOut(_ sender: Any) {
+        emptyDefaults()
+        relaunch()
+    }
 }
 
