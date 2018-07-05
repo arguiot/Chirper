@@ -58,12 +58,15 @@ class ViewController: NSViewController, NSTextViewDelegate {
                     "photo": UserDefaults.standard.string(forKey: "url")!
                 ]
             }
-            print(params)
             Alamofire.request("https://api.bufferapp.com/1/updates/create.json?access_token=\(token!)", method: .post, parameters: params, encoding: URLEncoding.default).responseJSON { (response) in
                 
                 print(response.result.value)
-                
-                self.view.window?.performClose(self)
+                if (response.result.value! as AnyObject)["success"] as! Bool != true {
+                    self.load.isHidden = true
+                    self.dialogOKCancel(question: "Error", text: (response.result.value! as AnyObject)["message"] as! String)
+                } else {
+                    self.view.window?.performClose(self)
+                }
             }
         } else {
             fatalError("Can't find the token or the profile.")
@@ -72,6 +75,16 @@ class ViewController: NSViewController, NSTextViewDelegate {
     
     @IBAction func buffer(_ sender: Any) {
         Tweet(sender, false)
+    }
+    
+    func dialogOKCancel(question: String, text: String) -> Bool {
+        let alert = NSAlert()
+        alert.messageText = question
+        alert.informativeText = text
+        alert.alertStyle = .warning
+        alert.addButton(withTitle: "OK")
+        alert.addButton(withTitle: "Cancel")
+        return alert.runModal() == .alertFirstButtonReturn
     }
 }
 
