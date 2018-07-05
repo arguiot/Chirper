@@ -40,13 +40,17 @@ class ViewController: NSViewController, NSTextViewDelegate {
         }
     }
     @IBAction func SendTweet(_ sender: Any) {
+        Tweet(sender, true)
+    }
+    
+    func Tweet(_ sender: Any, _ buff: Bool = true) {
         if token != nil || profile != nil {
             load.isHidden = false
             
             let params = [
                 "text": input.string,
                 "profile_ids": profile!,
-                "now": true
+                "now": buff
                 ] as [String : Any]
             Alamofire.request("https://api.bufferapp.com/1/updates/create.json?access_token=\(token!)", method: .post, parameters: params, encoding: URLEncoding.default).responseJSON { (response) in
                 print(response.result.value)
@@ -57,6 +61,9 @@ class ViewController: NSViewController, NSTextViewDelegate {
             fatalError("Can't find the token or the profile.")
         }
     }
-
+    
+    @IBAction func buffer(_ sender: Any) {
+        Tweet(sender, false)
+    }
 }
 

@@ -79,9 +79,29 @@ DQ
                                         </connections>
                                     </button>
                                 </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="A9E5308B-95CB-44F0-82FD-8E01F5C5E014" label="Buffer" paletteLabel="Buffer" sizingBehavior="auto" id="BVY-gQ-fod">
+                                    <nil key="toolTip"/>
+                                    <button key="view" verticalHuggingPriority="750" id="4f0-PB-05o">
+                                        <rect key="frame" x="0.0" y="14" width="75" height="41"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="bevel" title="Buffer" bezelStyle="regularSquare" alignment="center" borderStyle="border" sound="Pop" inset="2" id="482-h2-RNz">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                            <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
+                                            <modifierMask key="keyEquivalentModifierMask" shift="YES" command="YES"/>
+                                        </buttonCell>
+                                        <color key="contentTintColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="buffer:" target="2Ao-MY-eeu" id="7UU-tv-t5B"/>
+                                        </connections>
+                                    </button>
+                                </toolbarItem>
                             </allowedToolbarItems>
                             <defaultToolbarItems>
                                 <toolbarItem reference="qFJ-et-AMY"/>
+                                <toolbarItem reference="BVY-gQ-fod"/>
                                 <toolbarItem reference="pgH-0U-vE9"/>
                             </defaultToolbarItems>
                         </toolbar>
