@@ -20,7 +20,8 @@ class ViewController: NSViewController, NSTextViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        UserDefaults.standard.removeObject(forKey: "url")
+        
         // Do any additional setup after loading the view.
         load.isHidden = true
         input.delegate = self as NSTextViewDelegate
@@ -47,12 +48,19 @@ class ViewController: NSViewController, NSTextViewDelegate {
         if token != nil || profile != nil {
             load.isHidden = false
             
-            let params = [
+            var params = [
                 "text": input.string,
                 "profile_ids": profile!,
                 "now": buff
-                ] as [String : Any]
+            ] as [String : Any]
+            if UserDefaults.standard.string(forKey: "url") != nil {
+                params["media"] = [
+                    "photo": UserDefaults.standard.string(forKey: "url")!
+                ]
+            }
+            print(params)
             Alamofire.request("https://api.bufferapp.com/1/updates/create.json?access_token=\(token!)", method: .post, parameters: params, encoding: URLEncoding.default).responseJSON { (response) in
+                
                 print(response.result.value)
                 
                 self.view.window?.performClose(self)

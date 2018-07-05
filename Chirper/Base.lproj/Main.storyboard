@@ -166,12 +166,28 @@ DQ
                                     <constraint firstAttribute="height" constant="32" id="oHw-vd-dj2"/>
                                 </constraints>
                             </progressIndicator>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="04E-4S-J1Z">
+                                <rect key="frame" x="14" y="6" width="39" height="38"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="26" id="1r6-LP-rsl"/>
+                                    <constraint firstAttribute="width" constant="26" id="y2z-ea-uwh"/>
+                                </constraints>
+                                <buttonCell key="cell" type="round" bezelStyle="circular" image="NSAddTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="rcU-Rd-v7L">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <segue destination="5gV-cT-mao" kind="sheet" id="l2i-gN-tPT"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="45R-ds-Wib" firstAttribute="centerX" secondItem="GaC-ul-K2I" secondAttribute="centerX" id="6EP-sV-3Db"/>
                             <constraint firstAttribute="bottom" secondItem="77e-yU-X2i" secondAttribute="bottom" id="F2o-Nd-OQB"/>
                             <constraint firstItem="45R-ds-Wib" firstAttribute="centerY" secondItem="GaC-ul-K2I" secondAttribute="centerY" id="SFE-03-5uE"/>
+                            <constraint firstAttribute="bottom" secondItem="04E-4S-J1Z" secondAttribute="bottom" constant="15" id="ZAP-Fc-yTL"/>
                             <constraint firstAttribute="trailing" secondItem="0xH-9n-99U" secondAttribute="trailing" constant="20" id="bdf-MU-3UR"/>
+                            <constraint firstItem="04E-4S-J1Z" firstAttribute="leading" secondItem="GaC-ul-K2I" secondAttribute="leading" constant="20" id="ghl-k4-NWu"/>
                             <constraint firstItem="77e-yU-X2i" firstAttribute="top" secondItem="GaC-ul-K2I" secondAttribute="top" id="giN-Eq-JVJ"/>
                             <constraint firstAttribute="trailing" secondItem="77e-yU-X2i" secondAttribute="trailing" id="pB7-4v-FOZ"/>
                             <constraint firstItem="77e-yU-X2i" firstAttribute="leading" secondItem="GaC-ul-K2I" secondAttribute="leading" id="qbi-zT-l9c"/>
@@ -187,6 +203,53 @@ DQ
                 <customObject id="Mby-fR-BCH" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="46" y="733"/>
+        </scene>
+        <!--MediaVC-->
+        <scene sceneID="OCS-x9-ikd">
+            <objects>
+                <viewController id="5gV-cT-mao" customClass="MediaVC" customModule="Chirper" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="ixM-c9-aLH">
+                        <rect key="frame" x="0.0" y="0.0" width="296" height="83"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O91-zR-18B">
+                                <rect key="frame" x="20" y="20" width="256" height="22"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="URL" drawsBackground="YES" id="iID-6x-hho">
+                                    <font key="font" usesAppearanceFont="YES"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AZW-No-aFa">
+                                <rect key="frame" x="18" y="50" width="70" height="17"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Media URL" id="mHE-5W-q3w">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iQm-u7-Lv8">
+                                <rect key="frame" x="206" y="41" width="72" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="Done" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="qDl-5F-UlC">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="Done:" target="5gV-cT-mao" id="z5x-pH-ihK"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                    </view>
+                    <connections>
+                        <outlet property="url" destination="O91-zR-18B" id="1v7-4n-Kxk"/>
+                    </connections>
+                </viewController>
+                <customObject id="sA0-ux-6gy" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="46" y="997.5"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="Ayj-bb-cCX">
@@ -318,6 +381,7 @@ DQ
     </scenes>
     <resources>
         <image name="Chirper-HD" width="1024" height="1024"/>
+        <image name="NSAddTemplate" width="11" height="11"/>
         <sound name="Pop"/>
     </resources>
 </document>
