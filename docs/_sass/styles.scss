@@ -32,12 +32,16 @@ p {
 	box-sizing: border-box;
 	padding: 30px;
 }
+a {
+	color: inherit;
+}
 
 .bg	{
 	width: 100vw;
 	height: 100vh;
-	background: url("../img/desk.png");
+	background: url("../img/desk.jpg");
 	background-size: cover;
+	background-position: center;
 	position: fixed;
 	top: 0;
 	z-index: -10;
@@ -56,5 +60,62 @@ header {
 	text-shadow: 0 0 20px rgba(0, 0, 0, .5);
 }
 .empty {
-	height: 100vh;
+	height: 30vh;
+}
+nav {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	width: 50vw;
+	min-width: 200px;
+	position: absolute;
+	top: 20px;
+	left: 25vw;
+	margin: 0 auto;
+	color: white;
+	font-size: 56px;
+	a {
+		transition: all 100ms ease-in-out;
+		&:hover {
+			transform: scale(1.2)
+		}
+	}
+}
+article {
+	background: white;
+	width: 100vw;
+	text-align: center;
+	box-sizing: border-box;
+	padding: 20px;
+	padding-bottom: 50px;
+	box-shadow: 0 0 20px rgba(0, 0, 0, .5);
+	section {
+		box-sizing: border-box;
+		padding: 20px;
+	}
+	.download {
+		a.download {
+			background: rgb(0,122,255);
+			padding: 20px;
+			padding-right: 100px;
+			padding-left: 100px;
+			color: white;
+			text-decoration: none;
+			border-radius: 10px;
+			&:hover {
+				background: #4286f4;
+			}
+		}
+	}
+}
+footer {
+	width: 100vw;
+	height: 400px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
+	.year {
+		margin: 5px;
+	}
 }
