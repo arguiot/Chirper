@@ -1,1 +1,60 @@
-// Your website's CSS
+body {
+	font-family: -apple-system, BlinkMacSystemFont, "myriad-pro", sans-serif;
+	font-weight: 400;
+	padding: 0;
+	margin: 0;
+	overflow-x: hidden;
+	height: 100vh;
+}
+
+h1 {
+	font-size: 73px;
+	font-weight: 600;
+	line-height: 88px;
+	letter-spacing: -0.002em;
+}
+
+h2 {
+	margin-top: -24px;
+	font-size: 44px;
+	font-weight: 400;
+	line-height: 53px;
+	letter-spacing: -0.0275em;
+	text-align: center;
+}
+
+p {
+	font-size: 20px;
+	font-weight: 400;
+	color: inherit;
+	line-height: 32px;
+	letter-spacing: 0.002em;
+	box-sizing: border-box;
+	padding: 30px;
+}
+
+.bg	{
+	width: 100vw;
+	height: 100vh;
+	background: url("../img/desk.png");
+	background-size: cover;
+	position: fixed;
+	top: 0;
+	z-index: -10;
+	filter: saturate(135%) blur(50px);
+	transform: scale(1.2);
+	transition: all 500ms ease-in-out;
+}
+header {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	color: white;
+	text-shadow: 0 0 20px rgba(0, 0, 0, .5);
+}
+.empty {
+	height: 100vh;
+}
