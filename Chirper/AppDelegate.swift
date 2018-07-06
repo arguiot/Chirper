@@ -23,7 +23,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
         
         if UserDefaults.standard.string(forKey: "token") == nil ||  UserDefaults.standard.array(forKey: "profile") == nil {
-            let window = NSStoryboard(name: "Main", bundle: nil).instantiateController(withIdentifier: "InitWindow") as! NSWindowController
+            let window = NSStoryboard(name: NSStoryboard.Name(rawValue: "Main"), bundle: nil).instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "InitWindow")) as! NSWindowController
             WC = window
             WC?.showWindow(self)
             WC?.window?.makeKey()
@@ -32,7 +32,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
     }
     @IBAction func Open(_ sender: Any) {
-        let window = NSStoryboard(name: "Main", bundle: nil).instantiateController(withIdentifier: "ChirperWindow") as! NSWindowController
+        let window = NSStoryboard(name: NSStoryboard.Name(rawValue: "Main"), bundle: nil).instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "ChirperWindow")) as! NSWindowController
         WC = window
         WC?.showWindow(self)
         self.WC?.window?.titleVisibility = .hidden
