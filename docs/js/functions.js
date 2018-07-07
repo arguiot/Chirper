@@ -13,10 +13,10 @@ class MainController extends P.ViewController {
 		let pos = window.scrollY;
 		if (pos > window.innerHeight / 4) {
 			this.bg.style.filter = "none";
-			this.bg.style.transform = "none";
+			this.bg.style.transform = "scale(1.2)";
 		} else if (pos < window.innerHeight / 4) {
 			this.bg.style.filter = "saturate(135%) blur(50px)"
-			this.bg.style.transform = "scale(1.2)";
+			this.bg.style.transform = "scale(1.4)";
 		}
 	}
 }

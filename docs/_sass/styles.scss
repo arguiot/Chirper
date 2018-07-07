@@ -77,7 +77,7 @@ nav {
 	a {
 		transition: all 100ms ease-in-out;
 		&:hover {
-			transform: scale(1.2)
+			transform: scale(1.4)
 		}
 	}
 }
@@ -115,6 +115,7 @@ footer {
 	justify-content: center;
 	align-items: center;
 	color: white;
+	text-shadow: 0 0 20px rgba(0, 0, 0, .5);
 	.year {
 		margin: 5px;
 	}
