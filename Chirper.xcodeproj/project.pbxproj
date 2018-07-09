@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		683CAB8020F3789B0084BC06 /* PFMoveApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 683CAB7E20F3789B0084BC06 /* PFMoveApplication.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		685861D520E2626E00BA691E /* AuthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685861D320E2626E00BA691E /* AuthVC.swift */; };
 		685861D820E262DE00BA691E /* Cred.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685861D720E262DE00BA691E /* Cred.swift */; };
 		6877C4A120EE1A3000D6E0FD /* MediaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6877C4A020EE1A3000D6E0FD /* MediaVC.swift */; };
@@ -36,6 +37,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		683CAB7E20F3789B0084BC06 /* PFMoveApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFMoveApplication.m; sourceTree = "<group>"; };
+		683CAB7F20F3789B0084BC06 /* PFMoveApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFMoveApplication.h; sourceTree = "<group>"; };
 		685861D320E2626E00BA691E /* AuthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthVC.swift; sourceTree = "<group>"; };
 		685861D720E262DE00BA691E /* Cred.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cred.swift; sourceTree = "<group>"; };
 		6877C4A020EE1A3000D6E0FD /* MediaVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaVC.swift; sourceTree = "<group>"; };
@@ -64,6 +67,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		683CAB7720F376AE0084BC06 /* LetsMove */ = {
+			isa = PBXGroup;
+			children = (
+				683CAB7F20F3789B0084BC06 /* PFMoveApplication.h */,
+				683CAB7E20F3789B0084BC06 /* PFMoveApplication.m */,
+			);
+			path = LetsMove;
+			sourceTree = "<group>";
+		};
 		685861D220E2624300BA691E /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +125,7 @@
 		68C4ECEA20DF283C004B5C5B /* Chirper */ = {
 			isa = PBXGroup;
 			children = (
+				683CAB7720F376AE0084BC06 /* LetsMove */,
 				6892FC3320E07D3000C8BDA7 /* Buffer API */,
 				68C4ECEB20DF283C004B5C5B /* AppDelegate.swift */,
 				685861D220E2624300BA691E /* View Controllers */,
@@ -157,6 +170,7 @@
 				TargetAttributes = {
 					68C4ECE720DF283C004B5C5B = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1000;
 						SystemCapabilities = {
 							com.apple.Sandbox = {
 								enabled = 1;
@@ -202,6 +216,7 @@
 			files = (
 				68C4ECEE20DF283C004B5C5B /* ViewController.swift in Sources */,
 				6877C4A120EE1A3000D6E0FD /* MediaVC.swift in Sources */,
+				683CAB8020F3789B0084BC06 /* PFMoveApplication.m in Sources */,
 				6892FC3620E07D6D00C8BDA7 /* access_token.swift in Sources */,
 				685861D520E2626E00BA691E /* AuthVC.swift in Sources */,
 				68C4ECEC20DF283C004B5C5B /* AppDelegate.swift in Sources */,
@@ -343,6 +358,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Chirper/Chirper.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
@@ -361,6 +377,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ArthurG.Chirper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = Chirper/LetsMove/PFMoveApplication.h;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
@@ -370,6 +388,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Chirper/Chirper.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
@@ -388,6 +407,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ArthurG.Chirper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = Chirper/LetsMove/PFMoveApplication.h;
 				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
