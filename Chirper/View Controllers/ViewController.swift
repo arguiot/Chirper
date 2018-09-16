@@ -8,6 +8,7 @@
 
 import Cocoa
 import Alamofire
+
 class ViewController: NSViewController, NSTextViewDelegate {
     let tweet = 280
     

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14269.12" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14269.12"/>
-        <plugIn identifier="com.apple.WebKit2IBPlugin" version="14269.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14313.18"/>
+        <plugIn identifier="com.apple.WebKit2IBPlugin" version="14313.18"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -287,10 +287,10 @@
                                 <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="qFJ-et-AMY"/>
                                 <toolbarItem implicitItemIdentifier="54559DB8-0878-4E1B-B2F6-F904899EF9BD" label="Tweet" paletteLabel="Tweet" sizingBehavior="auto" id="pgH-0U-vE9">
                                     <nil key="toolTip"/>
-                                    <button key="view" verticalHuggingPriority="750" id="eji-cW-dOb">
-                                        <rect key="frame" x="0.0" y="14" width="72" height="43"/>
+                                    <button key="view" verticalHuggingPriority="750" id="eji-cW-dOb" customClass="Tweet" customModule="Chirper" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="14" width="75" height="35"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <buttonCell key="cell" type="push" title="Tweet" bezelStyle="rounded" alignment="center" borderStyle="border" sound="Pop" inset="2" id="UPj-am-4u2">
+                                        <buttonCell key="cell" type="bevel" title="Tweet" bezelStyle="regularSquare" alignment="center" borderStyle="border" sound="Pop" inset="2" id="UPj-am-4u2">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
                                             <string key="keyEquivalent" base64-UTF8="YES">
@@ -307,7 +307,7 @@ DQ
                                 <toolbarItem implicitItemIdentifier="A9E5308B-95CB-44F0-82FD-8E01F5C5E014" label="Buffer" paletteLabel="Buffer" sizingBehavior="auto" id="BVY-gQ-fod">
                                     <nil key="toolTip"/>
                                     <button key="view" verticalHuggingPriority="750" id="4f0-PB-05o">
-                                        <rect key="frame" x="0.0" y="14" width="75" height="37"/>
+                                        <rect key="frame" x="0.0" y="14" width="75" height="35"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <buttonCell key="cell" type="bevel" title="Buffer" bezelStyle="regularSquare" alignment="center" borderStyle="border" sound="Pop" inset="2" id="482-h2-RNz">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -385,13 +385,13 @@ DQ
                                     <constraint firstAttribute="height" constant="32" id="oHw-vd-dj2"/>
                                 </constraints>
                             </progressIndicator>
-                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="04E-4S-J1Z">
+                            <button verticalHuggingPriority="750" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="04E-4S-J1Z">
                                 <rect key="frame" x="14" y="8" width="38" height="37"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="26" id="1r6-LP-rsl"/>
                                     <constraint firstAttribute="width" constant="26" id="y2z-ea-uwh"/>
                                 </constraints>
-                                <buttonCell key="cell" type="round" bezelStyle="circular" image="NSAddTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="rcU-Rd-v7L">
+                                <buttonCell key="cell" type="round" bezelStyle="circular" image="NSAddTemplate" imagePosition="overlaps" alignment="center" alternateImage="NSActionTemplate" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="rcU-Rd-v7L">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
@@ -570,7 +570,7 @@ DQ
                                 </wkWebViewConfiguration>
                             </wkWebView>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="s1T-Ti-7xG">
-                                <rect key="frame" x="724" y="12" width="56" height="23"/>
+                                <rect key="frame" x="724.5" y="12" width="56" height="23"/>
                                 <buttonCell key="cell" type="roundTextured" title="Cancel" bezelStyle="texturedRounded" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="XHu-OU-qUg">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -600,6 +600,7 @@ DQ
     </scenes>
     <resources>
         <image name="Chirper-HD" width="1024" height="1024"/>
+        <image name="NSActionTemplate" width="14" height="14"/>
         <image name="NSAddTemplate" width="11" height="11"/>
         <sound name="Pop"/>
     </resources>

@@ -14,6 +14,7 @@
 		68796ABA20DFE0230012642D /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68796AB920DFE0230012642D /* Alamofire.framework */; };
 		68796ABB20DFE0230012642D /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 68796AB920DFE0230012642D /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6892FC3620E07D6D00C8BDA7 /* access_token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6892FC3520E07D6D00C8BDA7 /* access_token.swift */; };
+		68A69DA7214CB047006B0F76 /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A69DA6214CB047006B0F76 /* Tweet.swift */; };
 		68C3FF9720EC08A4002D367A /* Welcome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C3FF9520EC08A4002D367A /* Welcome.swift */; };
 		68C3FF9D20EC135E002D367A /* Profiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C3FF9C20EC135E002D367A /* Profiles.swift */; };
 		68C4ECEC20DF283C004B5C5B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68C4ECEB20DF283C004B5C5B /* AppDelegate.swift */; };
@@ -44,6 +45,7 @@
 		6877C4A020EE1A3000D6E0FD /* MediaVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaVC.swift; sourceTree = "<group>"; };
 		68796AB920DFE0230012642D /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/Mac/Alamofire.framework; sourceTree = "<group>"; };
 		6892FC3520E07D6D00C8BDA7 /* access_token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = access_token.swift; sourceTree = "<group>"; };
+		68A69DA6214CB047006B0F76 /* Tweet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
 		68C3FF9520EC08A4002D367A /* Welcome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Welcome.swift; sourceTree = "<group>"; };
 		68C3FF9C20EC135E002D367A /* Profiles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profiles.swift; sourceTree = "<group>"; };
 		68C4ECE820DF283C004B5C5B /* Chirper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chirper.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -133,6 +135,7 @@
 				68C4ECF120DF283E004B5C5B /* Main.storyboard */,
 				68C4ECF420DF283E004B5C5B /* Info.plist */,
 				68C4ECF520DF283E004B5C5B /* Chirper.entitlements */,
+				68A69DA6214CB047006B0F76 /* Tweet.swift */,
 			);
 			path = Chirper;
 			sourceTree = "<group>";
@@ -173,7 +176,7 @@
 						LastSwiftMigration = 1000;
 						SystemCapabilities = {
 							com.apple.Sandbox = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
@@ -215,6 +218,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				68C4ECEE20DF283C004B5C5B /* ViewController.swift in Sources */,
+				68A69DA7214CB047006B0F76 /* Tweet.swift in Sources */,
 				6877C4A120EE1A3000D6E0FD /* MediaVC.swift in Sources */,
 				683CAB8020F3789B0084BC06 /* PFMoveApplication.m in Sources */,
 				6892FC3620E07D6D00C8BDA7 /* access_token.swift in Sources */,
@@ -359,11 +363,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = Chirper/Chirper.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 73CCF549YB;
+				DEVELOPMENT_TEAM = TT6KKS6MS8;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
@@ -389,11 +392,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = Chirper/Chirper.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 73CCF549YB;
+				DEVELOPMENT_TEAM = TT6KKS6MS8;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
