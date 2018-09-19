@@ -14,6 +14,6 @@ class BufferCred {
     let redirectURI = "https://arguiot.github.io/Chirper/api"
     let requestURL: String?
     init() {
-        requestURL = "https://bufferapp.com/oauth2/authorize?client_id=\(BUFFER_CLIENT_ID)&redirect_uri=\(redirectURI)&response_type=code"
+        requestURL = "https://buffer.com/oauth2/authorize?client_id=\(BUFFER_CLIENT_ID)&redirect_uri=\(redirectURI)&response_type=code"
     }
 }

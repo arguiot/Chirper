@@ -28,6 +28,7 @@ class AuthVC: NSViewController, WKUIDelegate, WKNavigationDelegate {
         let request = URLRequest(url: url!)
         
         WebView.load(request)
+        print(WebView.url)
     }
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
