@@ -46,31 +46,32 @@ class ViewController: NSViewController, NSTextViewDelegate {
     }
     
     func Tweet(_ sender: Any, _ buff: Bool = true) {
-        if token != nil || profile != nil {
-            load.isHidden = false
-            
-            var params = [
-                "text": input.string,
-                "profile_ids": profile!,
-                "now": buff
+        guard token != nil else {
+            self.dialogOKCancel(question: "Please login", text: "Chirper couldn't find Buffer's token.")
+            return
+        }
+        guard profile != nil else { return }
+        load.isHidden = false
+        
+        var params = [
+            "text": input.string,
+            "profile_ids": profile!,
+            "now": buff
             ] as [String : Any]
-            if UserDefaults.standard.string(forKey: "url") != nil {
-                params["media"] = [
-                    "photo": UserDefaults.standard.string(forKey: "url")!
-                ]
+        if UserDefaults.standard.string(forKey: "url") != nil {
+            params["media"] = [
+                "photo": UserDefaults.standard.string(forKey: "url")!
+            ]
+        }
+        Alamofire.request("https://api.bufferapp.com/1/updates/create.json?access_token=\(token!)", method: .post, parameters: params, encoding: URLEncoding.default).responseJSON { (response) in
+            
+            print(response.result.value)
+            if (response.result.value! as AnyObject)["success"] as! Bool != true {
+                self.load.isHidden = true
+                self.dialogOKCancel(question: "Error", text: (response.result.value! as AnyObject)["message"] as! String)
+            } else {
+                self.view.window?.performClose(self)
             }
-            Alamofire.request("https://api.bufferapp.com/1/updates/create.json?access_token=\(token!)", method: .post, parameters: params, encoding: URLEncoding.default).responseJSON { (response) in
-                
-                print(response.result.value)
-                if (response.result.value! as AnyObject)["success"] as! Bool != true {
-                    self.load.isHidden = true
-                    self.dialogOKCancel(question: "Error", text: (response.result.value! as AnyObject)["message"] as! String)
-                } else {
-                    self.view.window?.performClose(self)
-                }
-            }
-        } else {
-            fatalError("Can't find the token or the profile.")
         }
     }
     
